@@ -9,8 +9,6 @@ class Chatroom {
         this.username = username;
         this.chat = db.collection('chats');
         this.unsub;
-
-
     }
 
     async addChat(message) {
@@ -23,9 +21,7 @@ class Chatroom {
             created_at: firebase.firestore.Timestamp.fromDate(now)
         }
 
-        const response = await this.chat.add(chat);
-        return response;
-
+        return await this.chat.add(chat);
     }
 
 
@@ -46,21 +42,9 @@ class Chatroom {
 
     updateRoom(room){
         this.room = room;
-        console.log("room updated");
+        console.log("Room Updated");
         if(this.unsub){
             this.unsub();
         }
     }
 }
-
-
-
-
-// setTimeout(() => {
-//     chatRoom.updateRoom('gaming');
-//     chatRoom.updateName("lucky");
-//     chatRoom.getChats((data) => {
-//         console.log(data);
-//     })
-//     chatRoom.addChat("Hellooooo")
-// }, 3000);

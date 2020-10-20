@@ -1,6 +1,5 @@
 //Reder 
 //Clear
-
 class ChatUI{
     constructor(list){
         this.list = list;
@@ -16,7 +15,6 @@ class ChatUI{
           <div class='time'>${time}</div>
           </li>
         `;
-
         this.list.innerHTML += html;
     }
 }
