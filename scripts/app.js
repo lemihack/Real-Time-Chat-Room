@@ -1,14 +1,12 @@
-const list = document.querySelector('.chat-list')
-const chatBox = document.querySelector('.new-chat');
-const nameUpdate = document.querySelector('.new-name');
-const updateMsg = document.querySelector('.update-mssg');
-const rooms = document.querySelector('.chat-rooms');
-
+const list = document.querySelector('.chat-list'), 
+    chatBox = document.querySelector('.new-chat'), 
+    nameUpdate = document.querySelector('.new-name'),
+    updateMsg = document.querySelector('.update-mssg'), 
+    rooms = document.querySelector('.chat-rooms');
 nameUpdate.addEventListener('submit', e => {
     e.preventDefault();
     const newName = nameUpdate.name.value.trim();
     chatRoom.updateName(newName)
-
     nameUpdate.reset()
     updateMsg.innerHTML = `Name updated to ${newName}`;
     setTimeout(() => {
